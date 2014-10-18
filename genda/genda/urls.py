@@ -26,4 +26,5 @@ urlpatterns = patterns(
     url(r'^foundation', include(foundation.urls)),
     url(r'^admin/', include(admin.site.urls)),
     url(r"^", index),
+    url(r'^accounts/', include('nopassword.urls')),
 )

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+SERVER_URL = 'localhost:8000'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
@@ -38,7 +39,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'genders',
-    'foundation'
+    'foundation',
+    'nopassword'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -54,6 +56,21 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'genda.urls'
 
 WSGI_APPLICATION = 'genda.wsgi.application'
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'nopassword.backends.EmailBackend'
+)
+
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'genda@mause.me'
+SERVER_EMAIL = 'genda@mause.me'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'genda@mause.me'
+EMAIL_HOST_PASSWORD = 'lollololl'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 
 # Database
