@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+
+<div class="row">
+    <div class="large-6 columns">
+        <form method="post" class="form-vertical">
+            {% csrf_token %}
+            {{ form.media }}
+            <div class="control-group row-fluid">
+                <input id="id_username" maxlength="30" name="username" type="text" style="text-align: center;" class="span12">
+            </div>
+
+            {% if form.errors %}
+            {% for section, error in form.errors.items %}
+                <div data-alert class="alert-box alert">
+                    {{error}}
+                    <a href="#" class="close">&times;</a>
+                </div>
+            {% endfor %}
+            {% endif %}
+
+            <div class="controls">
+                <button type="submit" class="btn">{% trans "Login" %}</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
