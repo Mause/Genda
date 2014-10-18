@@ -5,10 +5,19 @@
 
 {% block base_body %}
     <div class="row">
-        <div class="large-12 columns">
-            <h2>Genda</h2>
-            <hr />
+        <div class="large-8 medium-8 columns">
+            <h2><a href="/">Genda</a></h2>
         </div>
+        <div class="large-4 medium-4 columns left">
+            <h4>
+            {% if request.user.is_authenticated %}
+                <a href="/accounts/logout">Logout</a>
+            {% else %}
+                <a href="/accounts/login">Login</a>
+            {% endif %}
+            </h4>
+        </div>
+        <hr/>
     </div>
 
     {% block content %}
