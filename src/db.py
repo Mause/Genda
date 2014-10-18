@@ -53,6 +53,9 @@ class Db():
 
         return User.from_query((username, password))
 
+    def shutdown(self):
+        self.connection.close()
+
 
 def connect():
     return Db(sqlite3.connect('db.db'))

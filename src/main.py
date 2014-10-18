@@ -3,6 +3,7 @@ import tornado.web
 import tornado.log
 from tornado.web import RequestHandler
 
+from db import connect
 
 tornado.log.enable_pretty_logging()
 # import logging
@@ -25,4 +26,9 @@ application = tornado.web.Application([
 
 if __name__ == "__main__":
     application.listen(8888)
+
+    application.db = connect()
+
     tornado.ioloop.IOLoop.instance().start()
+
+    application.db.shutdown()
