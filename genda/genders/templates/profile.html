@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="large-12 columns">
+        <h3>Profile. Yo.</h3>
+
+
+        <div class="panel">
+            <p>
+                Select your preferred pronoun set below.
+            </p>
+
+            <form method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+
+                <button type="submit" class="btn">Save</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
