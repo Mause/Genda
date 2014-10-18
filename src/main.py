@@ -20,20 +20,27 @@ class LoginHandler(BaseRequestHandler):
         if self.current_user is not None:
             return self.redirect('/')
 
-        self.render('login.html')
+        self.render('login.html', messages=None)
 
     def post(self):
         username = self.get_argument('username')
-        password = self.get_argument('password')
-        password = pbkdf2_sha256.
+        hashed_password = hash_password(self.get_argument('password'))
 
-        if not self.user_exists(username):
-            return
+        user = self.db.get_user(username)
+        if user is None:
+            error = 'No such user as "{}"'.format(username)
+            logger.info(error)
+            return self.render('login.html', messages=[error])
 
-        import IPython
-        IPython.embed()
+        if user.hashed_password != hashed_password:
+            error = 'Incorrect password for "{}"'.format(username)
+            logger.info(error)
+            return self.render('login.html', messages=[error])
 
-        self.set_secure_cookie('uid', value)
+        assert user.uid is not None
+        self.set_secure_cookie('uid', user.uid)
+
+        return self.redirect('/')
 
 
 class LogoutHandler(BaseRequestHandler):
