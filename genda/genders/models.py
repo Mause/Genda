@@ -6,9 +6,8 @@ class Gender(models.Model):
     name = models.CharField(max_length=20)
 
 
-class Pronoun(models.Model):
-    gid = models.ForeignKey(Gender)
 
+class Pronoun(models.Model):
     object_word = models.CharField(max_length=10)  # them
     subject_word = models.CharField(max_length=10)   # they
     self_word = models.CharField(max_length=10)  # themself
