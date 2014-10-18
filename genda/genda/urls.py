@@ -1,9 +1,14 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from django.conf import settings
 
 import foundation.urls
 from genders.views import index
+
+from tastypie.api import Api
+from genders.api import AllPronounsResource
+
+v1_api = Api(api_name='v1')
+v1_api.register(AllPronounsResource())
 
 urlpatterns = patterns(
     '',
@@ -17,6 +22,7 @@ urlpatterns = patterns(
     # url(r"/users", UsersHandler),
     # url(r"/create_user", CreateUserHandler),
     # url(r"/everything", EverythingHandler)
+    url(r'^api/', include(v1_api.urls)),
     url(r'^foundation', include(foundation.urls)),
     url(r'^admin/', include(admin.site.urls)),
     url(r"^", index),
