@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="large-12 columns">
+        <form method="POST">
+            <label for="username">Username</label>
+            <input type="text" name="username" />
+
+            <label for="password">Password</label>
+            <input type="password" name="password" />
+
+            {% if messages %}
+            {% for message in messages %}
+                <div data-alert class="alert-box alert round">
+                    {{ message }}
+
+                    <a href="#" class="close">&times;</a>
+                </div>
+            {% end %}
+            {% end %}
+
+
+            <input type="submit" value="Login"/>
+        </form>
+    </div>
+</div>
+
+{% end %}

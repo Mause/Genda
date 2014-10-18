@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="row">
+    <div class="large-5 columns">
+        {% for user in users %}
+            {{user.name}}
+        {% end %}
+    </div>
+</div>
+
+{% end %}
