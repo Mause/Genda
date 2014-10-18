@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Gender',
             fields=[
-                ('id', models.AutoField(serialize=False, auto_created=True, verbose_name='ID', primary_key=True)),
+                ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
                 ('name', models.CharField(max_length=20)),
             ],
             options={
@@ -23,12 +23,12 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Pronoun',
             fields=[
-                ('id', models.AutoField(serialize=False, auto_created=True, verbose_name='ID', primary_key=True)),
+                ('id', models.AutoField(auto_created=True, serialize=False, verbose_name='ID', primary_key=True)),
                 ('object_word', models.CharField(max_length=10)),
                 ('subject_word', models.CharField(max_length=10)),
                 ('self_word', models.CharField(max_length=10)),
                 ('owner_word', models.CharField(max_length=10)),
-                ('gid', models.ForeignKey(to='genders.Gender')),
+                ('gid', models.ForeignKey(to='genders.Gender', null=True)),
             ],
             options={
             },
