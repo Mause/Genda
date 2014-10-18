@@ -6,6 +6,11 @@ class Gender(models.Model):
     # gid integer primary key autoincrement,
     name = models.CharField(max_length=20)
 
+    def __str__(self):
+        return self.name
+
+    __repr__ = __str__
+
 
 class UserToPronoun(models.Model):
     email_hash = models.CharField(max_length=30)
@@ -19,3 +24,13 @@ class Pronoun(models.Model):
     subject_word = models.CharField(max_length=10)   # they
     self_word = models.CharField(max_length=10)  # themself
     owner_word = models.CharField(max_length=10)  # their
+
+    def __str__(self):
+        return '{}/{}/{}/{}'.format(
+            self.object_word,
+            self.subject_word,
+            self.self_word,
+            self.owner_word
+        )
+
+    __repr__ = __str__
