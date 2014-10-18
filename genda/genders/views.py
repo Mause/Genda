@@ -1,4 +1,3 @@
-from django.shortcuts import render
 import hashlib
 
 from django.shortcuts import render_to_response, redirect
@@ -10,7 +9,10 @@ from .models import Pronoun, UserToPronoun
 
 
 def index(request):
-    return render(request, 'index.html')
+    if request.user.is_authenticated():
+        return redirect('/profile')
+
+    return render_to_response('index.html')
 
 
 class PronounChoiceForm(forms.Form):
