@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+<script type="text/javascript" src="{% static 'genders/js/handlebars.js' %}"></script>
+
+{% verbatim %}
+<div style="display:none;" id="story_template">
+Hello there! A short story about your past? Sure! <br/>
+There was a person. {{totitle subject_word}} liked {{self_word}} just the way {{subject_word}} was, but the world didn`t. They felt threatened, for no real reason at all.
+</div>
+{% endverbatim %}
+
+<script type="text/javascript">
+
+Handlebars.registerHelper('totitle', function(str) {
+    return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
+})
+
+var story_template = Handlebars.compile(
+    document.getElementById('story_template').innerText
+);
+
+var base_url = '/api/v1/pronoun/';
+
+function render_story() {
+    'use strict';
+    debugger;
+    var output = document.getElementById('output'),
+        hash = document.getElementById('email').value
+
+    output.innerHTML = '';
+
+    $.getJSON(
+        base_url + hash,
+        function(data) {
+            debugger;
+            output.innerHTML = story_template(data);
+        }
+    );
+}
+</script>
+
+<div class="row">
+    <div class="large-12 columns">
+        <div class="panel">
+            <input type="text" id="email"/>
+            <button onclick="javascript:render_story()" class="btn">Render story</button>
+
+            <p class="panel" id="output"></p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
