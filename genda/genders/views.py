@@ -47,3 +47,8 @@ def profile(request):
     )
 
 
+def demo(request):
+    return render_to_response(
+        'demo.html',
+        context_instance=RequestContext(request)
+    )

@@ -2,7 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
 import foundation.urls
-from genders.views import index, profile
+from genders.views import index, profile, demo
 
 from tastypie.api import Api
 from genders.api import AllPronounsResource
@@ -22,6 +22,7 @@ urlpatterns = patterns(
     # url(r"/users", UsersHandler),
     # url(r"/create_user", CreateUserHandler),
     # url(r"/everything", EverythingHandler)
+    url(r'^demo/', demo),
     url(r'^api/', include(v1_api.urls)),
     url(r'^foundation', include(foundation.urls)),
     url(r'^admin/', include(admin.site.urls)),
