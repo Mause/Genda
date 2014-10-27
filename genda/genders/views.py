@@ -25,7 +25,7 @@ class PronounChoiceForm(forms.Form):
 
 def profile(request):
     if not request.user.is_authenticated():
-        return redirect('/')
+        return redirect('/login')
 
     try:
         mapping = UserToPronoun.objects.get(user=request.user)
