@@ -1,83 +1,97 @@
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: they
     object_word: them
     owner_word: their
     self_word: themself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: tey
     object_word: tem
     owner_word: ter
     self_word: temself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: ey
     object_word: em
     owner_word: eir
     self_word: emself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: e
     object_word: em
     owner_word: eir
     self_word: emself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: thon
     object_word: thon
     owner_word: thons
     self_word: thonself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: fae
     object_word: faer
     owner_word: faers
     self_word: faerself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: vae
     object_word: vaer
     owner_word: vaers
     self_word: vaerself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: ae
     object_word: aer
     owner_word: aers
     self_word: aerself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: ne
     object_word: nym
     owner_word: nis
     self_word: nymself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: ne
     object_word: nem
     owner_word: nir
     self_word: nemself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: xe
     object_word: xem
     owner_word: xyr
     self_word: xemself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: xe
     object_word: xim
     owner_word: xis
     self_word: ximself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: xie
     object_word: xem
     owner_word: xyr
     self_word: xemself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     # ze or zie
     subject_word: ze
     object_word: zir
@@ -85,90 +99,105 @@
     self_word: zirself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: zhe
     object_word: zhir
     owner_word: zhirs
     self_word: zhirself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: ze
     object_word: hir
     owner_word: hirs
     self_word: hirself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: sie
     object_word: sier
     owner_word: siers
     self_word: sierself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: zed
     object_word: zed
     owner_word: zeds
     self_word: zedself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: zed
     object_word: zed
     owner_word: zeir
     self_word: zedself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: ce
     object_word: cir
     owner_word: cirs
     self_word: cirself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: co
     object_word: cos
     owner_word: cos
     self_word: coself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: ve
     object_word: vis
     owner_word: vir
     self_word: verself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: jee
     object_word: jem
     owner_word: jeir
     self_word: jemself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: lee
     object_word: lim
     owner_word: lis
     self_word: limself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: kye
     object_word: kyr
     owner_word: kyne
     self_word: kyrself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: per
     object_word: per
     owner_word: pers
     self_word: perself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: hu
     object_word: hum
     owner_word: hus
     self_word: humself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: bun
     object_word: bun
     owner_word: buns
     self_word: bunself
 - model: genders.Pronoun
   fields:
+    is_custom: false
     subject_word: it
     object_word: it
     owner_word: its
