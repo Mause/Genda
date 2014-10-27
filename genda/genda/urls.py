@@ -4,16 +4,12 @@ from django.contrib import admin
 import foundation.urls
 from genders.views import index, profile, demo
 
-from tastypie.api import Api
-from genders.api import AllPronounsResource
-
-v1_api = Api(api_name='v1')
-v1_api.register(AllPronounsResource())
+from genders.api import resolve_mapping
 
 urlpatterns = patterns(
     '',
     url(r'^demo/', demo),
-    url(r'^api/', include(v1_api.urls)),
+    url(r'^api/(?P<email_hash>[^/]*)/', resolve_mapping),
     url(r'^foundation', include(foundation.urls)),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('nopassword.urls')),
