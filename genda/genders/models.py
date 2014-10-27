@@ -16,6 +16,7 @@ class UserToPronoun(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, unique=True)
 
     default_pronoun = models.ForeignKey('Pronoun')
+    default_gender = models.ForeignKey('Gender', null=True)
 
 
 class Pronoun(models.Model):
