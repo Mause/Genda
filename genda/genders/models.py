@@ -12,7 +12,7 @@ class Gender(models.Model):
 
 
 class UserToPronoun(models.Model):
-    email_hash = models.CharField(max_length=30)
+    email_hash = models.CharField(max_length=32)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, unique=True)
 
     default_pronoun = models.ForeignKey('Pronoun')
