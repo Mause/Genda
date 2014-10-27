@@ -3,7 +3,6 @@ from django.conf import settings
 
 
 class Gender(models.Model):
-    # gid integer primary key autoincrement,
     name = models.CharField(max_length=20)
 
     def __str__(self):
