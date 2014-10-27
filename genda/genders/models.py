@@ -25,6 +25,8 @@ class Pronoun(models.Model):
     self_word = models.CharField(max_length=10)  # themself
     owner_word = models.CharField(max_length=10)  # their
 
+    is_custom = models.BooleanField(default=True)
+
     def __str__(self):
         return '{}/{}/{}/{}'.format(
             self.object_word,
