@@ -8,7 +8,7 @@ class Gender(models.Model):
     def __str__(self):
         return self.name
 
-    __repr__ = __str__
+    __repr__ = lambda self: '<{}>'.format(self.__str__())
 
 
 class UserToPronoun(models.Model):
@@ -17,6 +17,13 @@ class UserToPronoun(models.Model):
 
     default_pronoun = models.ForeignKey('Pronoun')
     default_gender = models.ForeignKey('Gender', null=True)
+
+    def __str__(self):
+        return '<{} prefers {}>'.format(
+            self.user.username, self.default_pronoun
+        )
+
+    __repr__ = __str__
 
 
 class Pronoun(models.Model):
@@ -35,4 +42,4 @@ class Pronoun(models.Model):
             self.owner_word
         )
 
-    __repr__ = __str__
+    __repr__ = lambda self: '<{}>'.format(self.__str__())
